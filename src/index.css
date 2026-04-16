@@ -1,0 +1,192 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Dark theme (default) ───────────────────────────────────────── */
+:root,
+[data-theme="dark"] {
+  --background:    #18181c;
+  --foreground:    #f9fdfe;
+  --card:          #1a1a1f;
+  --card-glass:    rgba(26, 26, 31, 0.55);
+  --card-glass-strong: rgba(26, 26, 31, 0.82);
+  --primary:       #0087f8;
+  --secondary:     #44c4f6;
+  --muted:         #1e1e25;
+  --muted-fg:      #b0bcc8;   /* raised from #94a3b8 for better contrast */
+  --border:        rgba(255, 255, 255, 0.09);
+  --border-strong: rgba(255, 255, 255, 0.15);
+  --radius:        0.75rem;
+  --ease-out:      cubic-bezier(0.22, 1, 0.36, 1);
+  --nav-bg:        rgba(24, 24, 28, 0.85);
+}
+
+/* ─── Light theme ───────────────────────────────────────────────── */
+[data-theme="light"] {
+  --background:    #f0f4ff;
+  --foreground:    #0d1117;
+  --card:          #ffffff;
+  --card-glass:    rgba(255, 255, 255, 0.70);
+  --card-glass-strong: rgba(255, 255, 255, 0.92);
+  --primary:       #0070d8;
+  --secondary:     #0ea5e9;
+  --muted:         #e8eef8;
+  --muted-fg:      #374151;
+  --border:        rgba(0, 0, 0, 0.08);
+  --border-strong: rgba(0, 0, 0, 0.14);
+  --nav-bg:        rgba(240, 244, 255, 0.90);
+}
+
+/* ─── Base ──────────────────────────────────────────────────────── */
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Sora', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background 0.35s ease, color 0.35s ease;
+}
+
+/* ─── Utilities ─────────────────────────────────────────────────── */
+.glass {
+  background: var(--card-glass);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--border);
+  transition: background 0.35s ease, border-color 0.35s ease;
+}
+
+.glass-strong {
+  background: var(--card-glass-strong);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  border: 1px solid var(--border-strong);
+  transition: background 0.35s ease, border-color 0.35s ease;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-muted {
+  color: var(--muted-fg);
+}
+
+.gradient-border {
+  position: relative;
+  border-radius: var(--radius);
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* ─── Scrollbar (hidden everywhere) ─────────────────────────────── */
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+*::-webkit-scrollbar {
+  display: none;
+}
+
+/* ─── Animations ─────────────────────────────────────────────────── */
+@keyframes float-y {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.35; }
+}
+
+@keyframes gradient-shift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes draw-line {
+  from { stroke-dashoffset: 1000; }
+  to   { stroke-dashoffset: 0; }
+}
+
+/* ─── React Flow overrides ──────────────────────────────────────── */
+.react-flow__renderer { background: transparent !important; }
+.react-flow__background { background: transparent !important; }
+.react-flow__pane { cursor: default !important; }
+.react-flow__handle { opacity: 0 !important; pointer-events: none !important; }
+.react-flow__node:hover .react-flow__handle { opacity: 0 !important; }
+.react-flow__edge-path { filter: drop-shadow(0 0 3px rgba(0,135,248,0.5)); }
+
+/* ─── Slide root ─────────────────────────────────────────────────── */
+.slide-root {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--background);
+  transition: background 0.35s ease;
+}
+
+/* ─── Light theme overrides for hardcoded Tailwind colors ──────────
+   All slides use hardcoded text-[#f9fdfe], text-[#94a3b8] etc.
+   These CSS overrides make them behave correctly in light mode.      */
+
+/* Foreground / white text → dark */
+[data-theme="light"] .text-\[\#f9fdfe\]       { color: var(--foreground) !important; }
+[data-theme="light"] .text-\[\#f9fdfe\]\/50   { color: rgba(13,17,23,0.55) !important; }
+[data-theme="light"] .text-\[\#f9fdfe\]\/40   { color: rgba(13,17,23,0.45) !important; }
+
+/* Medium text (#e2e8f0) → dark */
+[data-theme="light"] .text-\[\#e2e8f0\]       { color: #1e293b !important; }
+
+/* Muted text (#94a3b8) in all opacity variants → dark muted */
+[data-theme="light"] .text-\[\#94a3b8\]       { color: var(--muted-fg) !important; }
+[data-theme="light"] .text-\[\#94a3b8\]\/80   { color: rgba(55,65,81,0.85) !important; }
+[data-theme="light"] .text-\[\#94a3b8\]\/60   { color: rgba(55,65,81,0.75) !important; }
+[data-theme="light"] .text-\[\#94a3b8\]\/50   { color: rgba(55,65,81,0.65) !important; }
+[data-theme="light"] .text-\[\#94a3b8\]\/40   { color: rgba(55,65,81,0.55) !important; }
+[data-theme="light"] .text-\[\#94a3b8\]\/20   { color: rgba(55,65,81,0.35) !important; }
+
+/* White borders → dark subtle borders */
+[data-theme="light"] .border-white\/\[0\.04\],
+[data-theme="light"] .border-white\/\[0\.05\],
+[data-theme="light"] .border-white\/\[0\.06\],
+[data-theme="light"] .border-white\/\[0\.07\],
+[data-theme="light"] .border-white\/\[0\.08\] { border-color: rgba(0,0,0,0.10) !important; }
+[data-theme="light"] .border-white\/10        { border-color: rgba(0,0,0,0.10) !important; }
+[data-theme="light"] .border-white\/\[0\.15\] { border-color: rgba(0,0,0,0.14) !important; }
+
+/* Top-bar transparent fix: logo area */
+[data-theme="light"] .glass {
+  background: rgba(255,255,255,0.72);
+}
+
+/* Kbd hint on title slide */
+[data-theme="light"] kbd,
+[data-theme="light"] kbd.glass {
+  color: #374151 !important;
+  background: rgba(255,255,255,0.8) !important;
+  border-color: rgba(0,0,0,0.12) !important;
+}
