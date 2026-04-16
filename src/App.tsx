@@ -1,30 +1,31 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import { slideVariants } from './lib/animations'
-import { usePresentation } from './hooks/usePresentation'
+import { useCallback } from 'react'
+import Logo from './components/Logo'
 import Navigation from './components/Navigation'
 import ProgressBar from './components/ProgressBar'
-import Logo from './components/Logo'
+import { usePresentation } from './hooks/usePresentation'
+import { slideVariants } from './lib/animations'
 
-import TitleSlide           from './slides/01-TitleSlide'
-import AgendaSlide          from './slides/02-AgendaSlide'
-import SpeedParadoxSlide    from './slides/03-SpeedParadoxSlide'
-import VibeCodingSlide      from './slides/04-VibeCodingSlide'
-import WhatBreaksSlide      from './slides/05-WhatBreaksSlide'
-import CoreTruthSlide       from './slides/06-CoreTruthSlide'
-import FivePillarsSlide     from './slides/07-FivePillarsSlide'
-import ArchPatternsSlide    from './slides/08-ArchPatternsSlide'
-import AIBlindSpotSlide     from './slides/09-AIBlindSpotSlide'
-import StillManualSlide     from './slides/10-StillManualSlide'
-import DemoSlide            from './slides/11-DemoSlide'
-import IdeaToInfraSlide     from './slides/12-IdeaToInfraSlide'
-import ADRSlide             from './slides/13-ADRSlide'
-import PromptingSlide       from './slides/14-PromptingSlide'
-import FutureSlide          from './slides/15-FutureSlide'
+import TitleSlide from './slides/01-TitleSlide'
+import AgendaSlide from './slides/02-AgendaSlide'
+import SpeedParadoxSlide from './slides/03-SpeedParadoxSlide'
+import VibeCodingSlide from './slides/04-VibeCodingSlide'
+import WhatBreaksSlide from './slides/05-WhatBreaksSlide'
+import CoreTruthSlide from './slides/06-CoreTruthSlide'
+import FivePillarsSlide from './slides/07-FivePillarsSlide'
+import ArchPatternsSlide from './slides/08-ArchPatternsSlide'
+import AIBlindSpotSlide from './slides/09-AIBlindSpotSlide'
+import StillManualSlide from './slides/10-StillManualSlide'
+import DemoSlide from './slides/11-DemoSlide'
+import AvyloSlide from './slides/12-AvyloSlide'
+import IdeaToInfraSlide from './slides/12-IdeaToInfraSlide'
+import ADRSlide from './slides/13-ADRSlide'
+import ClosingSlide from './slides/13-ClosingSlide'
+import PromptingSlide from './slides/14-PromptingSlide'
+import FutureSlide from './slides/15-FutureSlide'
 import CareerEvolutionSlide from './slides/16-CareerEvolutionSlide'
-import SeniorSkillsSlide    from './slides/17-SeniorSkillsSlide'
-import AvyloSlide           from './slides/12-AvyloSlide'
+import SeniorSkillsSlide from './slides/17-SeniorSkillsSlide'
 import WorkshopExerciseSlide from './slides/19-WorkshopExerciseSlide'
-import ClosingSlide         from './slides/13-ClosingSlide'
 
 const slides = [
   TitleSlide,
@@ -53,10 +54,23 @@ export default function App() {
   const state = usePresentation()
   const CurrentSlide = slides[state.slideIndex]
 
+  // Click-to-navigate: right side = next, left side = prev
+  // Exclude interactive elements from triggering navigation
+  const handleClick = useCallback((e: React.MouseEvent) => {
+    const target = e.target as HTMLElement
+    if (target.closest('button, a, input, select, textarea, [data-no-nav], .react-flow')) return
+    if (e.clientX < window.innerWidth * 0.28) {
+      state.goPrev()
+    } else {
+      state.goNext()
+    }
+  }, [state.goPrev, state.goNext])
+
   return (
     <div
       className="relative w-screen h-screen overflow-hidden"
       style={{ background: 'var(--background)', transition: 'background 0.35s ease' }}
+      onClick={handleClick}
     >
       {/* Top bar */}
       <div className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 pt-5 pointer-events-none">

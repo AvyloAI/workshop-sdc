@@ -99,7 +99,7 @@ export default function Navigation({
   }
 
   return (
-    <>
+    <div data-no-nav>
       {/* Dot indicators — bottom center */}
       <div className="fixed bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-2 z-50">
         {Array.from({ length: totalSlides }).map((_, i) => (
@@ -122,21 +122,31 @@ export default function Navigation({
         ))}
       </div>
 
-      {/* Prev arrow */}
+      {/* Prev arrow - always visible on touch devices */}
       <button
         onClick={goPrev}
         aria-label="Previous"
-        className="fixed left-4 top-1/2 -translate-y-1/2 z-50 opacity-0 hover:opacity-100 transition-opacity duration-200 w-10 h-10 flex items-center justify-center rounded-full glass"
+        className="fixed left-3 top-1/2 -translate-y-1/2 z-50 
+          opacity-0 hover:opacity-100 
+          md:opacity-0 md:hover:opacity-100
+          transition-opacity duration-200 
+          w-10 h-10 flex items-center justify-center rounded-full glass
+          touch-visible"
         style={{ color: iconColor }}
       >
         <ChevronLeft />
       </button>
 
-      {/* Next arrow */}
+      {/* Next arrow - always visible on touch devices */}
       <button
         onClick={goNext}
         aria-label="Next"
-        className="fixed right-4 top-1/2 -translate-y-1/2 z-50 opacity-0 hover:opacity-100 transition-opacity duration-200 w-10 h-10 flex items-center justify-center rounded-full glass"
+        className="fixed right-3 top-1/2 -translate-y-1/2 z-50 
+          opacity-0 hover:opacity-100 
+          md:opacity-0 md:hover:opacity-100
+          transition-opacity duration-200 
+          w-10 h-10 flex items-center justify-center rounded-full glass
+          touch-visible"
         style={{ color: iconColor }}
       >
         <ChevronRight />
@@ -172,7 +182,7 @@ export default function Navigation({
           {isFullscreen ? <ExitFullscreenIcon /> : <FullscreenIcon />}
         </button>
       </div>
-    </>
+    </div>
   )
 }
 

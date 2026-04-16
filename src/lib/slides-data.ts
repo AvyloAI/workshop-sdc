@@ -15,7 +15,7 @@ export const SLIDES: SlideConfig[] = [
   { id: 'arch-patterns',    steps: 3 },  // 08
   { id: 'ai-blind-spot',    steps: 0 },  // 09
   { id: 'still-manual',     steps: 2 },  // 10
-  { id: 'demo',             steps: 8 },  // 11
+  { id: 'demo',             steps: 0 },  // 11 — self-animating
   { id: 'idea-to-infra',    steps: 4 },  // 12
   { id: 'adr',              steps: 0 },  // 13
   { id: 'prompting',        steps: 3 },  // 14
