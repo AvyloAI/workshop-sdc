@@ -1,6 +1,4 @@
 import {
-  Background,
-  BackgroundVariant,
   ReactFlow,
   useEdgesState,
   useNodesState,
@@ -99,12 +97,6 @@ export default function DemoSlide({ step }: SlideProps) {
           preventScrolling
           proOptions={{ hideAttribution: true }}
         >
-          <Background
-            variant={BackgroundVariant.Dots}
-            gap={24}
-            size={1}
-            color="rgba(255,255,255,0.04)"
-          />
         </ReactFlow>
       </div>
     </SlideWrapper>

@@ -1,5 +1,26 @@
-import { Position, type Edge, type Node } from '@xyflow/react'
-import type React from 'react'
+import { Position } from '@xyflow/react'
+
+// Define the types locally since they're not exported in this version
+export type Node = {
+  id: string
+  type?: string
+  position: { x: number; y: number }
+  data: any
+  style?: React.CSSProperties
+  className?: string
+  sourcePosition?: Position
+  targetPosition?: Position
+}
+
+export type Edge = {
+  id: string
+  source: string
+  target: string
+  type?: string
+  style?: React.CSSProperties
+  className?: string
+  animated?: boolean
+}
 
 export type FlowStep = {
   nodes: Node[]
