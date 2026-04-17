@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import GlowBlob from '../components/GlowBlob'
 import MonoLabel from '../components/MonoLabel'
 import SlideWrapper from '../components/SlideWrapper'
-import { heroEntrance, fadeUp, stagger } from '../lib/animations'
+import { fadeUp, heroEntrance, stagger } from '../lib/animations'
 
 interface SlideProps { step: number }
 
@@ -43,7 +43,7 @@ export default function FutureSlide(_: SlideProps) {
           style={{ fontSize: 'clamp(14px, 1.5vw, 18px)' }}
         >
           Not a phase before coding.{' '}
-          <span className="text-[#f9fdfe]">A practice alongside it.</span>
+          <span className="text-[#f9fdfe]">A practice woven through it.</span>
         </motion.p>
 
         <motion.div
@@ -51,9 +51,9 @@ export default function FutureSlide(_: SlideProps) {
           className="grid grid-cols-3 gap-4 w-full"
         >
           {[
-            { icon: '◉', label: 'Living Diagrams', desc: 'Auto-updated as code changes' },
-            { icon: '⟳', label: 'Continuous ADRs', desc: 'Decisions captured in real-time' },
-            { icon: '✦', label: 'AI Co-architect', desc: 'Trade-offs surfaced instantly' },
+            { icon: '◉', label: 'Living Systems',        desc: 'Diagrams that update as code changes' },
+            { icon: '⟳', label: 'Real-time Decisions',   desc: 'Trade-offs surfaced as you build' },
+            { icon: '❆', label: 'AI Co-architect',       desc: 'Your thinking partner, not your replacement' },
           ].map(item => (
             <motion.div
               key={item.label}

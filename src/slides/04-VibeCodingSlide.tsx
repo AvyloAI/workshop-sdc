@@ -1,17 +1,17 @@
 import { motion } from 'framer-motion'
+import type { ReactNode } from 'react'
 import GlowBlob from '../components/GlowBlob'
 import { IconChat, IconLightning, IconRocket } from '../components/Icons'
 import MonoLabel from '../components/MonoLabel'
 import SlideWrapper from '../components/SlideWrapper'
-import { heroEntrance, fadeUp, stagger } from '../lib/animations'
-import type { ReactNode } from 'react'
+import { fadeUp, heroEntrance, stagger } from '../lib/animations'
 
 interface SlideProps { step: number }
 
 const STEPS: { iconEl: ReactNode; label: string; sub: string }[] = [
-  { iconEl: <IconChat size={32} color="#44c4f6" />, label: 'Prompt',   sub: 'Describe what you want' },
-  { iconEl: <IconLightning size={32} color="#44c4f6" />, label: 'Generate', sub: 'AI builds the code' },
-  { iconEl: <IconRocket size={32} color="#44c4f6" />, label: 'Ship',    sub: 'Deploy in minutes' },
+  { iconEl: <IconChat size={32} color="#44c4f6" />, label: 'Describe',  sub: 'Tell AI what you want' },
+  { iconEl: <IconLightning size={32} color="#44c4f6" />, label: 'Generate', sub: 'AI writes the code' },
+  { iconEl: <IconRocket size={32} color="#44c4f6" />, label: 'Ship',     sub: 'Deploy in minutes' },
 ]
 
 export default function VibeCodingSlide(_: SlideProps) {
@@ -33,7 +33,7 @@ export default function VibeCodingSlide(_: SlideProps) {
           variants={heroEntrance}
           className="font-mono text-[14px] tracking-widest uppercase text-primary/60 mb-6"
         >
-          vibe · cod · ing
+          vibe · coding
         </motion.div>
 
         <motion.h2
@@ -44,7 +44,7 @@ export default function VibeCodingSlide(_: SlideProps) {
           <span className="gradient-text">Describe. Generate. Ship.</span>
           <br />
           <span className="text-[#94a3b8] font-light" style={{ fontSize: '70%' }}>
-            No architecture session required.
+            No architecture phase. No trade-off review.
           </span>
         </motion.h2>
 
@@ -60,13 +60,6 @@ export default function VibeCodingSlide(_: SlideProps) {
             </div>
           ))}
         </motion.div>
-
-        <motion.p
-          variants={fadeUp}
-          className="font-mono text-[13px] tracking-widest text-[#94a3b8]/60 uppercase mt-8"
-        >
-          Andrej Karpathy coined it. The industry adopted it overnight.
-        </motion.p>
       </motion.div>
     </SlideWrapper>
   )

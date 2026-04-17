@@ -1,7 +1,7 @@
-import { motion, AnimatePresence } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import type { ReactNode } from 'react'
 import GlowBlob from '../components/GlowBlob'
-import { IconUpArrow, IconRefresh, IconGrid, IconLock, IconEye } from '../components/Icons'
+import { IconEye, IconGrid, IconLock, IconRefresh, IconUpArrow } from '../components/Icons'
 import MonoLabel from '../components/MonoLabel'
 import SlideWrapper from '../components/SlideWrapper'
 import { EASE, fadeUp, stagger } from '../lib/animations'
@@ -9,10 +9,10 @@ import { EASE, fadeUp, stagger } from '../lib/animations'
 interface SlideProps { step: number }
 
 const pillars: { num: string; name: string; iconEl: ReactNode; desc: string }[] = [
-  { num: '01', name: 'Scalability',     iconEl: <IconUpArrow size={20} color="#44c4f6" />, desc: 'Handles 10× load without rewrite' },
-  { num: '02', name: 'Reliability',     iconEl: <IconRefresh size={20} color="#44c4f6" />, desc: 'Fails gracefully. Recovers fast.' },
-  { num: '03', name: 'Maintainability', iconEl: <IconGrid size={20} color="#44c4f6" />,    desc: 'Next engineer reads it in 10 min' },
-  { num: '04', name: 'Security',        iconEl: <IconLock size={20} color="#44c4f6" />,    desc: 'Defense-in-depth from day one' },
+  { num: '01', name: 'Scalability',     iconEl: <IconUpArrow size={20} color="#44c4f6" />, desc: 'Scales without a rewrite' },
+  { num: '02', name: 'Reliability',     iconEl: <IconRefresh size={20} color="#44c4f6" />, desc: 'Fails safely. Recovers fast.' },
+  { num: '03', name: 'Maintainability', iconEl: <IconGrid size={20} color="#44c4f6" />,    desc: 'Easy to understand. Easy to change.' },
+  { num: '04', name: 'Security',        iconEl: <IconLock size={20} color="#44c4f6" />,    desc: 'Secure by design, not by patch' },
   { num: '05', name: 'Observability',   iconEl: <IconEye size={20} color="#44c4f6" />,     desc: 'You know what\'s wrong before users do' },
 ]
 
@@ -33,15 +33,15 @@ export default function FivePillarsSlide({ step }: SlideProps) {
             className="font-sans font-bold leading-tight tracking-tight"
             style={{ fontSize: 'clamp(26px, 3vw, 42px)' }}
           >
-            The pillars of{' '}
-            <span className="gradient-text">good systems</span>
+            Things that{' '}
+            <span className="gradient-text">never change</span>
           </motion.h2>
           <motion.p
             variants={fadeUp}
             className="font-sans text-[#94a3b8] font-light text-[15px] mt-4 leading-relaxed"
           >
             AI changes the velocity.
-            <br />These don't change.
+            <br />These don't.
           </motion.p>
         </motion.div>
 

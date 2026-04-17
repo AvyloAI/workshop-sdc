@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import GlowBlob from '../components/GlowBlob'
 import SlideWrapper from '../components/SlideWrapper'
-import { heroEntrance, fadeUp, stagger } from '../lib/animations'
+import { fadeUp, heroEntrance, stagger } from '../lib/animations'
 
 interface SlideProps { step: number }
 
@@ -33,7 +33,7 @@ export default function CoreTruthSlide(_: SlideProps) {
           className="font-sans font-bold leading-tight tracking-tight mb-8"
           style={{ fontSize: 'clamp(36px, 5.5vw, 76px)' }}
         >
-          Architecture is not a diagram.
+          Architecture is not diagrams.
         </motion.h2>
 
         <motion.div
@@ -47,7 +47,7 @@ export default function CoreTruthSlide(_: SlideProps) {
           className="font-sans font-light text-[#94a3b8] leading-tight tracking-tight"
           style={{ fontSize: 'clamp(24px, 3.5vw, 48px)' }}
         >
-          It's a series of{' '}
+          It's{' '}
           <span className="gradient-text font-semibold">decisions.</span>
         </motion.h3>
 

@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import GlowBlob from '../components/GlowBlob'
 import MonoLabel from '../components/MonoLabel'
 import SlideWrapper from '../components/SlideWrapper'
-import { heroEntrance, fadeUp, stagger } from '../lib/animations'
+import { fadeUp, heroEntrance, stagger } from '../lib/animations'
 
 interface SlideProps { step: number }
 
@@ -34,8 +34,9 @@ export default function AIBlindSpotSlide(_: SlideProps) {
           >
             It optimizes the function in front of it.
             <br />
-            It cannot reason about what happens at{' '}
-            <span className="text-[#f9fdfe]">10,000 concurrent users.</span>
+            Ask it to design for{' '}
+            <span className="text-[#f9fdfe]">10,000 concurrent users</span>{' '}
+            and it won't warn you what breaks.
           </motion.p>
         </motion.div>
 

@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import GlowBlob from '../components/GlowBlob'
 import MonoLabel from '../components/MonoLabel'
 import SlideWrapper from '../components/SlideWrapper'
@@ -9,26 +9,26 @@ interface SlideProps { step: number }
 const steps = [
   {
     num: '01',
-    phase: 'Define',
-    detail: 'What problem? Who uses it? What must never fail?',
+    phase: 'Idea',
+    detail: 'What problem? Who needs it? What must never fail?',
     icon: '◎',
   },
   {
     num: '02',
-    phase: 'Constrain',
-    detail: 'Scale? Budget? Team size? Compliance? Latency SLOs?',
+    phase: 'Constraints',
+    detail: 'Scale? Budget? Team? Compliance? Latency?',
     icon: '⊞',
   },
   {
     num: '03',
-    phase: 'Decide',
+    phase: 'Architecture',
     detail: 'Choose patterns. Document trade-offs. Write ADRs.',
     icon: '⟐',
   },
   {
     num: '04',
-    phase: 'Build',
-    detail: 'Now write code — or prompt AI to write it.',
+    phase: 'Code',
+    detail: 'Now write — or prompt AI to write.',
     icon: '⚡',
   },
 ]
@@ -49,9 +49,8 @@ export default function IdeaToInfraSlide({ step }: SlideProps) {
             className="font-sans font-bold leading-tight tracking-tight"
             style={{ fontSize: 'clamp(28px, 4vw, 52px)' }}
           >
-            The framework that scales
-            <br />
-            <span className="gradient-text">with any project</span>
+            Before you write{' '}
+            <span className="gradient-text">a single line</span>
           </motion.h2>
         </motion.div>
 
@@ -108,7 +107,7 @@ export default function IdeaToInfraSlide({ step }: SlideProps) {
               transition={{ duration: 0.6 }}
               className="mt-8 font-mono text-[13px] tracking-widest uppercase text-primary/60"
             >
-              AI accelerates step 4. Only humans can own steps 1–3.
+              AI owns step 4. Only humans can own steps 1–3.
             </motion.p>
           )}
         </AnimatePresence>

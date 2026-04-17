@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import GlowBlob from '../components/GlowBlob'
 import MonoLabel from '../components/MonoLabel'
 import SlideWrapper from '../components/SlideWrapper'
@@ -7,9 +7,9 @@ import { EASE, fadeUp, stagger } from '../lib/animations'
 interface SlideProps { step: number }
 
 const stats = [
-  { val: '10×', label: 'Faster to scaffold a full-stack app vs 2020' },
-  { val: '3 min', label: 'To generate an entire auth system with AI' },
-  { val: '68%', label: 'Of production incidents trace to sprint-1 architecture' },
+  { val: '10×', label: 'Faster to scaffold a full-stack app with AI' },
+  { val: '3 min', label: 'To generate an entire auth system from a prompt' },
+  { val: '68%', label: 'Of incidents trace back to decisions made in sprint one' },
 ]
 
 export default function SpeedParadoxSlide({ step }: SlideProps) {
@@ -27,11 +27,11 @@ export default function SpeedParadoxSlide({ step }: SlideProps) {
             className="font-sans font-bold leading-tight tracking-tight"
             style={{ fontSize: 'clamp(32px, 4.5vw, 60px)' }}
           >
-            We ship{' '}
+            We build{' '}
             <span className="gradient-text">faster</span>
             {' '}than ever.
             <br />
-            <span className="text-[#94a3b8] font-light">Systems break more than ever.</span>
+            <span className="text-[#94a3b8] font-light">We break faster than ever.</span>
           </motion.h2>
         </motion.div>
 

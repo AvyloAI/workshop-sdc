@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import GlowBlob from '../components/GlowBlob'
 import MonoLabel from '../components/MonoLabel'
 import SlideWrapper from '../components/SlideWrapper'
-import { heroEntrance, fadeUp, stagger } from '../lib/animations'
+import { fadeUp, heroEntrance, stagger } from '../lib/animations'
 
 interface SlideProps { step: number }
 
@@ -22,15 +22,15 @@ export default function ADRSlide(_: SlideProps) {
             className="font-sans font-bold leading-tight tracking-tight mb-5"
             style={{ fontSize: 'clamp(26px, 3.5vw, 44px)' }}
           >
-            Every decision
+            Decisions are forgotten.
             <br />
-            <span className="gradient-text">deserves a record.</span>
+            <span className="gradient-text">Systems are not.</span>
           </motion.h2>
           <motion.p
             variants={fadeUp}
             className="font-sans text-[#94a3b8] font-light text-[15px] leading-relaxed"
           >
-            3 months from now, nobody will remember why you chose PostgreSQL over MongoDB.
+            Six months from now, nobody will remember why you chose PostgreSQL over MongoDB.
             <br /><br />
             <span className="text-[#f9fdfe]">Write it down.</span>
           </motion.p>

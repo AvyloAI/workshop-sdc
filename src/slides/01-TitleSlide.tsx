@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import GlowBlob from '../components/GlowBlob'
 import GradientText from '../components/GradientText'
 import SlideWrapper from '../components/SlideWrapper'
-import { EASE, heroEntrance, fadeUp, stagger } from '../lib/animations'
+import { EASE, fadeUp, heroEntrance, stagger } from '../lib/animations'
 
 interface SlideProps { step: number }
 
@@ -48,8 +48,8 @@ export default function TitleSlide(_: SlideProps) {
           className="font-sans font-light text-[#94a3b8] max-w-xl"
           style={{ fontSize: 'clamp(15px, 1.6vw, 20px)' }}
         >
-          Does software architecture still matter
-          when <span className="text-[#f9fdfe] font-normal">AI writes the code?</span>
+          AI builds faster.{' '}
+          <span className="text-[#f9fdfe] font-normal">Architecture decides what survives.</span>
         </motion.p>
 
         {/* Meta */}

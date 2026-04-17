@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import GlowBlob from '../components/GlowBlob'
 import MonoLabel from '../components/MonoLabel'
 import SlideWrapper from '../components/SlideWrapper'
@@ -36,9 +36,9 @@ export default function PromptingSlide({ step }: SlideProps) {
             className="font-sans font-bold leading-tight tracking-tight"
             style={{ fontSize: 'clamp(26px, 3.5vw, 48px)' }}
           >
-            Context-rich prompts
+            Better context
             <br />
-            <span className="gradient-text">unlock architectural thinking</span>
+            <span className="gradient-text">→ better architecture</span>
           </motion.h2>
         </motion.div>
 
@@ -70,7 +70,7 @@ export default function PromptingSlide({ step }: SlideProps) {
               animate={{ opacity: 1 }}
               className="mt-6 font-mono text-[13px] tracking-widest uppercase text-primary/60 text-center"
             >
-              Constraints → Context → Consequences = better AI output
+              Constraints + Context + Consequences = better AI output
             </motion.p>
           )}
         </AnimatePresence>

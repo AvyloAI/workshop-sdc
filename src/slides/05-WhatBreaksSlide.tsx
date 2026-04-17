@@ -1,7 +1,7 @@
-import { motion, AnimatePresence } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import type { ReactNode } from 'react'
 import GlowBlob from '../components/GlowBlob'
-import { IconGhost, IconFile, IconExplosion, IconWarning } from '../components/Icons'
+import { IconExplosion, IconFile, IconGhost, IconWarning } from '../components/Icons'
 import MonoLabel from '../components/MonoLabel'
 import SlideWrapper from '../components/SlideWrapper'
 import { EASE, fadeUp, stagger } from '../lib/animations'
@@ -11,26 +11,26 @@ interface SlideProps { step: number }
 const breaks: { num: string; title: string; sub: string; iconEl: ReactNode }[] = [
   {
     num: '01',
-    title: 'Architecture became invisible',
-    sub: 'Decisions happen inside the prompt — not your head.',
+    title: 'No one designed the system',
+    sub: 'Decisions happened inside prompts, not heads.',
     iconEl: <IconGhost size={26} color="#44c4f6" />,
   },
   {
     num: '02',
-    title: 'Diagrams are already fiction',
-    sub: 'System evolved 5× faster than documentation.',
+    title: 'Documentation is already outdated',
+    sub: 'The system evolved faster than anyone tracked.',
     iconEl: <IconFile size={26} color="#44c4f6" />,
   },
   {
     num: '03',
-    title: 'Scale was never considered',
-    sub: '"Works on my machine" shipped to production.',
+    title: 'Scale was never planned',
+    sub: '"Works on my machine" became a production incident.',
     iconEl: <IconExplosion size={26} color="#44c4f6" />,
   },
   {
     num: '04',
-    title: 'Junior engineers inherited the blast radius',
-    sub: 'AI compressed the experience gap — without the intuition.',
+    title: 'Responsibility shifted too early',
+    sub: 'AI compressed the experience gap — not the judgment gap.',
     iconEl: <IconWarning size={26} color="#44c4f6" />,
   },
 ]
@@ -50,7 +50,7 @@ export default function WhatBreaksSlide({ step }: SlideProps) {
             className="font-sans font-bold leading-tight tracking-tight"
             style={{ fontSize: 'clamp(28px, 4vw, 50px)' }}
           >
-            The <span className="gradient-text">hidden tax</span> of vibe coding
+            The <span className="gradient-text">diagnosis</span>
           </motion.h2>
         </motion.div>
 

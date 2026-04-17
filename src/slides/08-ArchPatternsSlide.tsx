@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import GlowBlob from '../components/GlowBlob'
 import MonoLabel from '../components/MonoLabel'
 import SlideWrapper from '../components/SlideWrapper'
@@ -11,22 +11,22 @@ const patterns = [
   {
     label: 'Monolith',
     tag: '2000s',
-    desc: 'One codebase. Simple. Hard to scale.',
+    desc: 'One codebase. Simple to start. Hard to scale.',
     icon: '▪',
     col: '#94a3b8',
   },
   {
     label: 'Microservices',
     tag: '2015+',
-    desc: 'Independent services. Scalable. Complex.',
+    desc: 'Independent services. Scalable. Operationally complex.',
     icon: '◈',
     col: '#0087f8',
   },
   {
-    label: 'Event-Driven',
-    tag: '2020+',
-    desc: 'Async events. Resilient. Hard to trace.',
-    icon: '⟳',
+    label: 'AI Era',
+    tag: 'Now',
+    desc: 'AI writes code. No one designs the system. Complexity explodes.',
+    icon: '✶',
     col: '#44c4f6',
   },
 ]
@@ -50,9 +50,9 @@ export default function ArchPatternsSlide({ step }: SlideProps) {
             className="font-sans font-bold leading-tight tracking-tight"
             style={{ fontSize: 'clamp(28px, 4vw, 52px)' }}
           >
-            How systems evolved
+            The evolution
             <br />
-            <span className="text-[#94a3b8] font-light">over the last 25 years</span>
+            <span className="text-[#94a3b8] font-light">that led us here</span>
           </motion.h2>
         </motion.div>
 
@@ -99,16 +99,16 @@ export default function ArchPatternsSlide({ step }: SlideProps) {
                       ))}
                     </div>
                   )}
-                  {p.label === 'Event-Driven' && (
+                  {p.label === 'AI Era' && (
                     <div className="mt-4 flex items-center gap-2">
                       <div className="h-8 px-2 rounded flex items-center justify-center"
                         style={{ background: 'rgba(68,196,246,0.1)', border: '1px solid rgba(68,196,246,0.2)' }}>
-                        <span className="font-mono text-[10px] text-secondary/70">Producer</span>
+                        <span className="font-mono text-[10px] text-secondary/70">Prompt</span>
                       </div>
-                      <span className="text-[#44c4f6] text-xs flex-1 text-center">⟶ events ⟶</span>
+                      <span className="text-[#44c4f6] text-xs flex-1 text-center">⟶ AI ⟶</span>
                       <div className="h-8 px-2 rounded flex items-center justify-center"
                         style={{ background: 'rgba(68,196,246,0.1)', border: '1px solid rgba(68,196,246,0.2)' }}>
-                        <span className="font-mono text-[10px] text-secondary/70">Consumer</span>
+                        <span className="font-mono text-[10px] text-secondary/70">Ship</span>
                       </div>
                     </div>
                   )}

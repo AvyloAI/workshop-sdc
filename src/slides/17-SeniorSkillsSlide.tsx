@@ -1,7 +1,7 @@
-import { motion, AnimatePresence } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import type { ReactNode } from 'react'
 import GlowBlob from '../components/GlowBlob'
-import { IconTelescope, IconScale, IconPencil, IconHandshake } from '../components/Icons'
+import { IconHandshake, IconPencil, IconScale, IconTelescope } from '../components/Icons'
 import MonoLabel from '../components/MonoLabel'
 import SlideWrapper from '../components/SlideWrapper'
 import { EASE, fadeUp, stagger } from '../lib/animations'
@@ -11,18 +11,18 @@ interface SlideProps { step: number }
 const traits: { iconEl: ReactNode; label: string; sub: string }[] = [
   {
     iconEl: <IconTelescope size={24} color="#44c4f6" />,
-    label: 'Sees the whole system',
-    sub: 'Not just the feature they\'re building',
+    label: 'System thinking',
+    sub: 'Sees the whole — not just the feature in front of them',
   },
   {
     iconEl: <IconScale size={24} color="#44c4f6" />,
-    label: 'Owns the trade-offs',
-    sub: 'Knows what to sacrifice and why',
+    label: 'Trade-off ownership',
+    sub: 'Knows what to sacrifice and can defend why',
   },
   {
     iconEl: <IconPencil size={24} color="#44c4f6" />,
-    label: 'Documents decisions',
-    sub: 'Future engineers read their reasoning',
+    label: 'Decision ownership',
+    sub: 'Writes the reasoning. Future engineers read it.',
   },
   {
     iconEl: <IconHandshake size={24} color="#44c4f6" />,
@@ -47,16 +47,14 @@ export default function SeniorSkillsSlide({ step }: SlideProps) {
             className="font-sans font-bold leading-tight tracking-tight mb-5"
             style={{ fontSize: 'clamp(24px, 3vw, 40px)' }}
           >
-            The gap is no longer
+            AI made juniors
             <br />
-            <span className="gradient-text">how fast you type.</span>
+            <span className="gradient-text">faster.</span>
           </motion.h2>
           <motion.p
             variants={fadeUp}
             className="font-sans text-[#94a3b8] font-light text-[13px] leading-relaxed"
           >
-            AI made juniors faster.
-            <br />
             It didn't give them judgment.
           </motion.p>
         </motion.div>

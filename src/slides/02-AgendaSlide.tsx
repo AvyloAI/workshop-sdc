@@ -6,13 +6,10 @@ import { EASE, fadeUp, stagger } from '../lib/animations'
 interface SlideProps { step: number }
 
 const tracks = [
-  { num: '01', label: 'The Speed Paradox',     tag: 'Context' },
-  { num: '02', label: 'Vibe Coding & AI',       tag: 'Problem' },
-  { num: '03', label: 'What Still Breaks',      tag: 'Reality' },
-  { num: '04', label: 'Architecture Patterns',  tag: 'Theory' },
-  { num: '05', label: 'Live Demo',              tag: 'Hands-on' },
-  { num: '06', label: 'The Future Engineer',    tag: 'Career' },
-  { num: '07', label: 'Avylo AI',               tag: 'Product' },
+  { num: '01', label: 'Reality',       tag: 'How we got here' },
+  { num: '02', label: 'Problem',       tag: 'What broke' },
+  { num: '03', label: 'Shift',         tag: 'A new way of thinking' },
+  { num: '04', label: 'Future',        tag: 'Where it goes' },
 ]
 
 export default function AgendaSlide(_: SlideProps) {
@@ -30,18 +27,18 @@ export default function AgendaSlide(_: SlideProps) {
           className="shrink-0"
         >
           <p className="font-mono text-[13px] tracking-[0.25em] uppercase text-[#94a3b8] mb-3">
-            Today's roadmap
+            Today's Journey
           </p>
           <h2
             className="font-sans font-bold leading-tight tracking-tight text-[#f9fdfe]"
             style={{ fontSize: 'clamp(28px, 3.5vw, 48px)' }}
           >
-            What we'll
+            Four
             <br />
-            <span className="gradient-text">cover</span>
+            <span className="gradient-text">big ideas</span>
           </h2>
           <div className="mt-6 font-mono text-[13px] text-[#94a3b8]/70 tracking-wider">
-            90 min · no slides after this
+            90 min · hands-on
           </div>
         </motion.div>
 

@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import GlowBlob from '../components/GlowBlob'
 import MonoLabel from '../components/MonoLabel'
 import SlideWrapper from '../components/SlideWrapper'
-import { heroEntrance, fadeUp, stagger } from '../lib/animations'
+import { fadeUp, heroEntrance, stagger } from '../lib/animations'
 
 interface SlideProps { step: number }
 
@@ -23,9 +23,9 @@ export default function WorkshopExerciseSlide(_: SlideProps) {
             className="font-sans font-bold leading-tight tracking-tight mb-5"
             style={{ fontSize: 'clamp(24px, 3vw, 40px)' }}
           >
-            Design a
+            Design a system.
             <br />
-            <span className="gradient-text">real system.</span>
+            <span className="gradient-text">Make decisions.</span>
           </motion.h2>
           <motion.p
             variants={fadeUp}
@@ -33,7 +33,7 @@ export default function WorkshopExerciseSlide(_: SlideProps) {
           >
             Apply today's framework.
             <br />
-            One hour. Any system.
+            Any system. One hour.
             <br />
             Write one ADR.
           </motion.p>
@@ -65,10 +65,10 @@ export default function WorkshopExerciseSlide(_: SlideProps) {
 
             <div className="space-y-4">
               {[
-                { step: '01', label: 'Define', q: 'What are the 3 non-negotiable requirements?' },
-                { step: '02', label: 'Constrain', q: 'What\'s your scale? Read vs write ratio? SLO?' },
-                { step: '03', label: 'Decide', q: 'Monolith or services? SQL or cache? CDN?' },
-                { step: '04', label: 'ADR', q: 'Document your biggest trade-off decision.' },
+                { step: '01', label: 'Define',      q: 'What are the 3 non-negotiable requirements?' },
+                { step: '02', label: 'Constrain',   q: 'Scale? Read/write ratio? SLO? Team size?' },
+                { step: '03', label: 'Decide',      q: 'Monolith or services? Which DB? CDN?' },
+                { step: '04', label: 'Write an ADR', q: 'Document your biggest trade-off.' },
               ].map(row => (
                 <div key={row.step} className="flex gap-4 items-start">
                   <span

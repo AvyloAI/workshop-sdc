@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import GlowBlob from '../components/GlowBlob'
 import MonoLabel from '../components/MonoLabel'
 import SlideWrapper from '../components/SlideWrapper'
@@ -10,26 +10,26 @@ interface SlideProps { step: number }
 const eras = [
   {
     period: '2000–2015',
-    role: 'The Architect as Oracle',
-    desc: 'One senior person decided everything. A bottleneck and a power structure.',
+    role: 'Oracle',
+    desc: 'One senior person decided everything. A bottleneck dressed as authority.',
     state: 'past',
   },
   {
     period: '2015–2022',
-    role: 'The Architect as Facilitator',
+    role: 'Facilitator',
     desc: 'Distributed teams. ADRs. Fitness functions. Collaborative — still slow.',
     state: 'past',
   },
   {
     period: '2022–Now',
-    role: 'The Architect as Prompter',
+    role: 'Prompter',
     desc: 'AI writes the code. Architecture is improvised. Systems break quietly.',
     state: 'now',
   },
   {
     period: 'Next',
-    role: 'The Architect as Systems Thinker',
-    desc: 'AI handles execution. Humans own constraints, decisions, and direction.',
+    role: 'Systems Thinker',
+    desc: 'AI handles execution. Humans own constraints, context, and direction.',
     state: 'future',
   },
 ]
@@ -57,9 +57,9 @@ export default function CareerEvolutionSlide({ step }: SlideProps) {
             className="font-sans font-bold leading-tight tracking-tight"
             style={{ fontSize: 'clamp(26px, 3.5vw, 48px)' }}
           >
-            How the architect's
+            How the role
             <br />
-            <span className="gradient-text">role is shifting</span>
+            <span className="gradient-text">is transforming</span>
           </motion.h2>
         </motion.div>
 

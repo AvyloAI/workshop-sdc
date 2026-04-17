@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import GlowBlob from '../components/GlowBlob'
 import MonoLabel from '../components/MonoLabel'
 import SlideWrapper from '../components/SlideWrapper'
@@ -21,10 +21,9 @@ export default function StillManualSlide({ step }: SlideProps) {
             className="font-sans font-bold leading-tight tracking-tight"
             style={{ fontSize: 'clamp(30px, 4.5vw, 58px)' }}
           >
-            Mostly{' '}
-            <span className="gradient-text">yes.</span>
+            2026… and architecture
             <br />
-            <span className="text-[#94a3b8] font-light">And that's the problem.</span>
+            <span className="gradient-text">is still manual.</span>
           </motion.h2>
         </motion.div>
 
@@ -39,14 +38,14 @@ export default function StillManualSlide({ step }: SlideProps) {
                 <span className="font-mono text-[10px] tracking-widest uppercase text-[#94a3b8]">Old way</span>
                 <p className="font-sans font-semibold text-[#f9fdfe]"
                   style={{ fontSize: 'clamp(14px, 1.5vw, 18px)' }}>
-                  Whiteboard + Lucidchart
+                  Whiteboards &amp; Diagrams
                 </p>
                 <div className="flex flex-col gap-1.5 w-full">
-                  {['Draw.io diagrams', 'RFC documents', 'Architecture committee', 'Static PowerPoints'].map(t => (
+                  {['Draw.io / Lucidchart', 'Static RFC docs', 'Architecture committee', 'Snapshot in time'].map(t => (
                     <div key={t} className="font-sans text-[#94a3b8] font-light text-[12px] py-1 border-b border-white/[0.04] last:border-0">{t}</div>
                   ))}
                 </div>
-                <span className="font-mono text-[10px] tracking-widest text-[#94a3b8]/50 uppercase">Slow. Disconnected. Manual.</span>
+                <span className="font-mono text-[10px] tracking-widest text-[#94a3b8]/50 uppercase">Slow. Disconnected. Forgotten.</span>
               </motion.div>
             )}
           </AnimatePresence>
@@ -62,10 +61,10 @@ export default function StillManualSlide({ step }: SlideProps) {
                 <span className="font-mono text-[10px] tracking-widest uppercase text-primary">What's needed</span>
                 <p className="font-sans font-semibold gradient-text"
                   style={{ fontSize: 'clamp(14px, 1.5vw, 18px)' }}>
-                  AI-assisted thinking
+                  Integrated, AI-assisted thinking
                 </p>
                 <div className="flex flex-col gap-1.5 w-full">
-                  {['Conversational design', 'Living diagrams', 'Trade-off analysis', 'Contextual patterns'].map(t => (
+                  {['Conversational design', 'Living diagrams', 'Trade-off analysis', 'Always up to date'].map(t => (
                     <div key={t} className="font-sans text-[#f9fdfe] font-light text-[12px] py-1 border-b border-white/[0.04] last:border-0">{t}</div>
                   ))}
                 </div>
