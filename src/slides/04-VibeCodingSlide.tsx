@@ -1,18 +1,10 @@
 import { motion } from 'framer-motion'
-import type { ReactNode } from 'react'
 import GlowBlob from '../components/GlowBlob'
-import { IconChat, IconLightning, IconRocket } from '../components/Icons'
 import MonoLabel from '../components/MonoLabel'
 import SlideWrapper from '../components/SlideWrapper'
 import { fadeUp, heroEntrance, stagger } from '../lib/animations'
 
 interface SlideProps { step: number }
-
-const STEPS: { iconEl: ReactNode; label: string; sub: string }[] = [
-  { iconEl: <IconChat size={32} color="#44c4f6" />, label: 'Describe',  sub: 'Tell AI what you want' },
-  { iconEl: <IconLightning size={32} color="#44c4f6" />, label: 'Generate', sub: 'AI writes the code' },
-  { iconEl: <IconRocket size={32} color="#44c4f6" />, label: 'Ship',     sub: 'Deploy in minutes' },
-]
 
 export default function VibeCodingSlide(_: SlideProps) {
   return (
@@ -48,18 +40,12 @@ export default function VibeCodingSlide(_: SlideProps) {
           </span>
         </motion.h2>
 
-        <motion.div
+        <motion.p
           variants={fadeUp}
-          className="grid grid-cols-3 gap-4 w-full mt-4"
+          className="font-mono text-[13px] tracking-[0.2em] uppercase text-[#94a3b8]/60 mt-4"
         >
-          {STEPS.map(item => (
-            <div key={item.label} className="glass rounded-xl p-5 text-center border border-white/[0.05]">
-              <div className="mb-3 flex items-center justify-center">{item.iconEl}</div>
-              <p className="font-sans font-semibold text-[#f9fdfe] text-[17px] mb-1">{item.label}</p>
-              <p className="font-sans text-[#94a3b8] font-light text-[15px]">{item.sub}</p>
-            </div>
-          ))}
-        </motion.div>
+          No architecture. No thinking.
+        </motion.p>
       </motion.div>
     </SlideWrapper>
   )

@@ -105,9 +105,11 @@ export default function IdeaToInfraSlide({ step }: SlideProps) {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6 }}
-              className="mt-8 font-mono text-[13px] tracking-widest uppercase text-primary/60"
+              className="mt-8 font-sans font-bold text-center"
+            style={{ fontSize: 'clamp(16px, 1.8vw, 22px)' }}
             >
-              AI owns step 4. Only humans can own steps 1–3.
+              AI owns{' '}<span className="gradient-text">code.</span>
+              {' '}Humans own{' '}<span className="text-[#f9fdfe]">decisions.</span>
             </motion.p>
           )}
         </AnimatePresence>

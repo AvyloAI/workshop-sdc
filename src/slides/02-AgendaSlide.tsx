@@ -33,9 +33,9 @@ export default function AgendaSlide(_: SlideProps) {
             className="font-sans font-bold leading-tight tracking-tight text-[#f9fdfe]"
             style={{ fontSize: 'clamp(28px, 3.5vw, 48px)' }}
           >
-            Four
+            Today's
             <br />
-            <span className="gradient-text">big ideas</span>
+            <span className="gradient-text">Journey</span>
           </h2>
           <div className="mt-6 font-mono text-[13px] text-[#94a3b8]/70 tracking-wider">
             90 min · hands-on

@@ -8,29 +8,25 @@ import { EASE, fadeUp, stagger } from '../lib/animations'
 
 interface SlideProps { step: number }
 
-const breaks: { num: string; title: string; sub: string; iconEl: ReactNode }[] = [
+const breaks: { num: string; title: string; iconEl: ReactNode }[] = [
   {
     num: '01',
     title: 'No one designed the system',
-    sub: 'Decisions happened inside prompts, not heads.',
     iconEl: <IconGhost size={26} color="#44c4f6" />,
   },
   {
     num: '02',
     title: 'Documentation is already outdated',
-    sub: 'The system evolved faster than anyone tracked.',
     iconEl: <IconFile size={26} color="#44c4f6" />,
   },
   {
     num: '03',
     title: 'Scale was never planned',
-    sub: '"Works on my machine" became a production incident.',
     iconEl: <IconExplosion size={26} color="#44c4f6" />,
   },
   {
     num: '04',
-    title: 'Responsibility shifted too early',
-    sub: 'AI compressed the experience gap — not the judgment gap.',
+    title: 'Decisions were never made',
     iconEl: <IconWarning size={26} color="#44c4f6" />,
   },
 ]
@@ -66,11 +62,10 @@ export default function WhatBreaksSlide({ step }: SlideProps) {
                 >
                   <span className="shrink-0">{item.iconEl}</span>
                   <div className="flex-1">
-                    <p className="font-sans font-semibold text-[#f9fdfe] mb-0.5"
-                      style={{ fontSize: 'clamp(16px, 1.5vw, 19px)' }}>
+                    <p className="font-sans font-semibold text-[#f9fdfe]"
+                      style={{ fontSize: 'clamp(17px, 1.6vw, 22px)' }}>
                       {item.title}
                     </p>
-                    <p className="font-sans text-[#94a3b8] font-light text-[15px]">{item.sub}</p>
                   </div>
                   <span className="font-mono text-[13px] text-primary/50 tracking-widest shrink-0">{item.num}</span>
                 </motion.div>

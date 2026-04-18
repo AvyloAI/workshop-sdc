@@ -48,27 +48,27 @@ export default function AIBlindSpotSlide(_: SlideProps) {
           className="flex-1 flex flex-col gap-3"
         >
           {[
-            { label: 'Race conditions under load' },
-            { label: 'Cascading failure modes' },
-            { label: 'Data consistency guarantees' },
-            { label: 'Latency at the 99th percentile' },
-            { label: 'Operational runbooks' },
-            { label: 'Cost at scale' },
+            { label: 'No scale awareness' },
+            { label: 'No failure thinking' },
+            { label: 'No long-term reasoning' },
           ].map((item) => (
             <motion.div
               key={item.label}
               variants={fadeUp}
-              className="flex items-center gap-3 px-4 py-3 glass rounded-lg border border-white/[0.05]"
+              className="flex items-center gap-3 px-5 py-4 glass rounded-lg border border-white/[0.05]"
             >
               <span className="text-[#94a3b8]/50 text-sm">✕</span>
-              <span className="font-sans text-[#94a3b8] font-light text-[14px]">{item.label}</span>
+              <span className="font-sans text-[#f9fdfe] font-light"
+                style={{ fontSize: 'clamp(15px, 1.4vw, 18px)' }}>
+                {item.label}
+              </span>
             </motion.div>
           ))}
           <motion.p
             variants={fadeUp}
             className="font-mono text-[10px] tracking-widest uppercase text-primary/50 mt-2 text-center"
           >
-            ↑ AI doesn't warn you about any of this
+            ↑ AI doesn’t warn you about any of this
           </motion.p>
         </motion.div>
       </div>

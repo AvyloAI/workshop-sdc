@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import type { ReactNode } from 'react'
 import GlowBlob from '../components/GlowBlob'
-import { IconHandshake, IconPencil, IconScale, IconTelescope } from '../components/Icons'
+import { IconPencil, IconScale, IconTelescope } from '../components/Icons'
 import MonoLabel from '../components/MonoLabel'
 import SlideWrapper from '../components/SlideWrapper'
 import { EASE, fadeUp, stagger } from '../lib/animations'
@@ -23,11 +23,6 @@ const traits: { iconEl: ReactNode; label: string; sub: string }[] = [
     iconEl: <IconPencil size={24} color="#44c4f6" />,
     label: 'Decision ownership',
     sub: 'Writes the reasoning. Future engineers read it.',
-  },
-  {
-    iconEl: <IconHandshake size={24} color="#44c4f6" />,
-    label: 'Asks before prompting',
-    sub: '"What are we building?" before "Build this."',
   },
 ]
 

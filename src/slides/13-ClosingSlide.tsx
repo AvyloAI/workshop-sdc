@@ -32,43 +32,36 @@ export default function ClosingSlide(_: SlideProps) {
         </motion.p>
 
         <motion.h2
-          variants={fadeUp}
-          className="font-sans font-light text-[#94a3b8] leading-tight tracking-tight mb-4"
-          style={{ fontSize: 'clamp(22px, 3vw, 36px)' }}
+          variants={heroEntrance}
+          className="font-sans font-bold leading-tight tracking-tight mb-8"
+          style={{ fontSize: 'clamp(32px, 4vw, 58px)' }}
         >
-          The question is no longer:
+          <span className="gradient-text">Can you build it?</span>
         </motion.h2>
 
-        <motion.h2
+        <motion.h3
           variants={fadeUp}
-          className="font-sans font-light text-[#f9fdfe]/50 tracking-tight mb-10"
-          style={{ fontSize: 'clamp(20px, 2.5vw, 30px)' }}
+          className="font-sans font-light text-[#94a3b8] leading-tight tracking-tight mb-6"
+          style={{ fontSize: 'clamp(18px, 2.2vw, 28px)' }}
         >
-          "Can you build it?"
-        </motion.h2>
+          That's no longer the question.
+        </motion.h3>
 
         <motion.div
           variants={fadeUp}
-          className="w-12 h-px mb-10"
+          className="w-12 h-px mb-8"
           style={{ background: 'linear-gradient(90deg, transparent, #0087f8, transparent)' }}
         />
 
         <motion.h2
           variants={heroEntrance}
           className="font-sans font-bold leading-tight tracking-tight"
-          style={{ fontSize: 'clamp(32px, 5vw, 64px)' }}
+          style={{ fontSize: 'clamp(28px, 3.5vw, 52px)' }}
         >
-          "Should it be built
+          Should it be built
           <br />
-          <span className="gradient-text">this way?"</span>
+          <span className="gradient-text">this way?</span>
         </motion.h2>
-
-        <motion.p
-          variants={fadeUp}
-          className="font-mono text-[13px] tracking-widest uppercase text-[#94a3b8]/70 mt-14"
-        >
-          That's a human question. It always will be.
-        </motion.p>
       </motion.div>
     </SlideWrapper>
   )

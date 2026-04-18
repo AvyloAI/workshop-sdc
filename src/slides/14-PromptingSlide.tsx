@@ -11,14 +11,6 @@ const prompts = [
     bad: '❌  "Build me a SaaS backend"',
     good: '✓  "I need an API for 10k users/day. Auth via JWT, Postgres DB, scale-out later. What architecture fits?"',
   },
-  {
-    bad: '❌  "Create a notification system"',
-    good: '✓  "Real-time notifications, 5M users, 99.9% uptime required. Event-driven or polling? Trade-offs?"',
-  },
-  {
-    bad: '❌  "Add caching"',
-    good: '✓  "Cache layer between API and DB. Read-heavy workload. Redis vs in-memory? Invalidation strategy?"',
-  },
 ]
 
 export default function PromptingSlide({ step }: SlideProps) {

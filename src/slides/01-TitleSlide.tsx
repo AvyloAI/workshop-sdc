@@ -35,11 +35,11 @@ export default function TitleSlide(_: SlideProps) {
         <motion.h1
           variants={heroEntrance}
           className="font-sans font-bold leading-[0.95] tracking-tight mb-8"
-          style={{ fontSize: 'clamp(60px, 8.5vw, 120px)' }}
+          style={{ fontSize: 'clamp(38px, 5.5vw, 80px)' }}
         >
-          Architecting
+          Is Software Architecture
           <br />
-          <GradientText>the Future</GradientText>
+          <GradientText>Dead in the Age of AI?</GradientText>
         </motion.h1>
 
         {/* Sub */}

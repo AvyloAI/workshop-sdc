@@ -21,9 +21,9 @@ export default function StillManualSlide({ step }: SlideProps) {
             className="font-sans font-bold leading-tight tracking-tight"
             style={{ fontSize: 'clamp(30px, 4.5vw, 58px)' }}
           >
-            2026… and architecture
+            We modernized coding.
             <br />
-            <span className="gradient-text">is still manual.</span>
+            <span className="gradient-text">Not thinking.</span>
           </motion.h2>
         </motion.div>
 

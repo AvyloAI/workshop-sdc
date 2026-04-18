@@ -40,8 +40,8 @@ export default function FivePillarsSlide({ step }: SlideProps) {
             variants={fadeUp}
             className="font-sans text-[#94a3b8] font-light text-[15px] mt-4 leading-relaxed"
           >
-            AI changes the velocity.
-            <br />These don't.
+            AI changes speed.
+            <br />These decide survival.
           </motion.p>
         </motion.div>
 

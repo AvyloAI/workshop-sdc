@@ -85,7 +85,7 @@ export default function WorkshopExerciseSlide(_: SlideProps) {
 
             <div className="mt-6 pt-5 border-t border-white/[0.06]">
               <p className="font-mono text-[13px] tracking-widest text-primary/60 uppercase">
-                Share your ADR with the community → avylo.ai/community
+                Share your ADR with the community → AvyloAi.com/community
               </p>
             </div>
           </motion.div>

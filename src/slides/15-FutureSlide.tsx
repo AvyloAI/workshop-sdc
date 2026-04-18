@@ -42,8 +42,8 @@ export default function FutureSlide(_: SlideProps) {
           className="font-sans text-[#94a3b8] font-light mb-10"
           style={{ fontSize: 'clamp(14px, 1.5vw, 18px)' }}
         >
-          Not a phase before coding.{' '}
-          <span className="text-[#f9fdfe]">A practice woven through it.</span>
+          Not a phase.{' '}
+          <span className="text-[#f9fdfe]">A constant.</span>
         </motion.p>
 
         <motion.div

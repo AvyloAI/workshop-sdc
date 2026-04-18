@@ -28,7 +28,7 @@ const eras = [
   },
   {
     period: 'Next',
-    role: 'Systems Thinker',
+    role: 'Systems Thinker + AI Collaborator',
     desc: 'AI handles execution. Humans own constraints, context, and direction.',
     state: 'future',
   },

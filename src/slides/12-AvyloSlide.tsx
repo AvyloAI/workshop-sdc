@@ -37,7 +37,7 @@ export default function AvyloSlide(_: SlideProps) {
         </motion.div>
 
         <motion.p variants={fadeUp} className="font-mono text-[11px] tracking-[0.25em] uppercase text-primary mb-4">
-          Coming Next
+          Avylo AI
         </motion.p>
 
         <motion.div variants={heroEntrance} className="mb-6">
@@ -75,7 +75,7 @@ export default function AvyloSlide(_: SlideProps) {
               boxShadow: '0 0 32px rgba(0,135,248,0.35), 0 0 64px rgba(0,135,248,0.12)',
             }}
           >
-            avylo.ai
+            AvyloAi.com
             <span>→</span>
           </div>
         </motion.div>
