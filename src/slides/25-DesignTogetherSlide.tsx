@@ -8,28 +8,28 @@ interface SlideProps { step: number }
 
 const decisions = [
   { 
-    q: 'Where do we store URLs?',
+    q: 'Where do we store products & orders?',
     tag: 'Storage decision',
-    answer: 'PostgreSQL + Redis cache. Need ACID for consistency, Redis for speed.',
-    lookFor: '✓ Mentions database + cache / ✓ Considers read/write tradeoff'
+    answer: 'Main database for orders. Cache (fast memory) for popular products so lookups are instant.',
+    lookFor: '✓ Separates permanent vs temporary data / ✓ Mentions speed or cache'
   },
   { 
-    q: 'How do we generate short IDs?',
-    tag: 'Algorithm decision',
-    answer: 'Auto-increment ID + base62 encoding. Fast, collision-free, URL-safe.',
-    lookFor: '✓ Mentions uniqueness / ✓ Considers URL-safe characters'
+    q: 'How do we show products quickly?',
+    tag: 'Speed decision',
+    answer: 'Cache the top 1000 products in memory. Serve them instantly. Update main database in background.',
+    lookFor: '✓ Mentions speed / ✓ Thinks about most popular items first'
   },
   { 
-    q: 'What happens at scale?',
+    q: 'What breaks first on Black Friday?',
     tag: 'Failure decision',
-    answer: 'Database becomes bottleneck. Solution: sharding by ID prefix or region.',
-    lookFor: '✓ Identifies the failure mode / ✓ Proposes a solution'
+    answer: 'Database gets overwhelmed with updates. Solution: queue up the orders, process them one by one.',
+    lookFor: '✓ Identifies the bottleneck / ✓ Proposes a queuing or batching solution'
   },
   { 
-    q: 'Read-heavy or write-heavy?',
-    tag: 'Pattern decision',
-    answer: 'Read-heavy (100:1 ratio). Use cache + CDN. Writes go to primary DB.',
-    lookFor: '✓ Recognizes read dominance / ✓ Suggests caching strategy'
+    q: 'Do people browse more than they buy?',
+    tag: 'Traffic pattern',
+    answer: 'Yes — 100 people browse for every 1 who buys. So optimize for fast browsing. Buying can be slower.',
+    lookFor: '✓ Recognizes reading > writing / ✓ Prioritizes the common case'
   },
 ]
 
@@ -50,9 +50,9 @@ export default function DesignTogetherSlide({ step }: SlideProps) {
             className="font-sans font-bold leading-tight tracking-tight mb-5"
             style={{ fontSize: 'clamp(22px, 3vw, 40px)' }}
           >
-            URL Shortener
+            E-commerce Store
             <br />
-            <span className="gradient-text">at 1M req/day</span>
+            <span className="gradient-text">1M shoppers/day</span>
           </motion.h2>
           <motion.p
             variants={fadeUp}
@@ -75,10 +75,10 @@ export default function DesignTogetherSlide({ step }: SlideProps) {
               >
                 <p className="font-mono text-[11px] tracking-widest uppercase text-primary/80 mb-1">Killer question</p>
                 <p className="font-sans text-[#f9fdfe] text-[13px] leading-snug mb-3">
-                  What breaks first if traffic goes 10×?
+                  What breaks first if traffic doubles?
                 </p>
                 <p className="font-sans text-[#44c4f6] font-light text-[12px] leading-snug">
-                  💡 Database sharding limit or cache invalidation race conditions.
+                  💡 Database connection limits or the cache becoming stale.
                 </p>
               </motion.div>
             )}
