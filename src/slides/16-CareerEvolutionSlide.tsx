@@ -71,7 +71,7 @@ export default function CareerEvolutionSlide({ step }: SlideProps) {
 
           {eras.map((era, i) => (
             <AnimatePresence key={era.period}>
-              {step > i && (
+              {step >= i && (
                 <motion.div
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}

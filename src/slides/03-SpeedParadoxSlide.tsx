@@ -37,7 +37,7 @@ export default function SpeedParadoxSlide({ step }: SlideProps) {
         <div className="grid grid-cols-2 gap-px w-full max-w-2xl overflow-hidden rounded-2xl border border-white/[0.07]">
           {stats.map((s, i) => (
             <AnimatePresence key={s.val}>
-              {step > i && (
+              {step >= i && (
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}

@@ -27,20 +27,21 @@ export default function StillManualSlide({ step }: SlideProps) {
           </motion.h2>
         </motion.div>
 
-        <div className="grid grid-cols-2 gap-px w-full max-w-3xl overflow-hidden rounded-2xl border border-white/[0.07]">
+        {/* Presenter note: Mentally split the slide here. Focus only on contrast. */}
+        <div className="flex flex-col md:flex-row gap-6 w-full max-w-3xl overflow-visible rounded-2xl border border-white/[0.07]">
           <AnimatePresence>
             {step >= 1 && (
               <motion.div
                 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, ease: EASE }}
-                className="glass p-8 flex flex-col items-center text-center gap-4"
+                className="glass p-7 flex-1 flex flex-col items-center text-center gap-3 min-w-[220px]"
               >
                 <span className="font-mono text-[10px] tracking-widest uppercase text-[#94a3b8]">Old way</span>
                 <p className="font-sans font-semibold text-[#f9fdfe]"
                   style={{ fontSize: 'clamp(14px, 1.5vw, 18px)' }}>
                   Whiteboards &amp; Diagrams
                 </p>
-                <div className="flex flex-col gap-1.5 w-full">
+                <div className="flex flex-col gap-1 w-full">
                   {['Draw.io / Lucidchart', 'Static RFC docs', 'Architecture committee', 'Snapshot in time'].map(t => (
                     <div key={t} className="font-sans text-[#94a3b8] font-light text-[12px] py-1 border-b border-white/[0.04] last:border-0">{t}</div>
                   ))}
@@ -50,12 +51,14 @@ export default function StillManualSlide({ step }: SlideProps) {
             )}
           </AnimatePresence>
 
+          <div className="hidden md:block w-px bg-gradient-to-b from-transparent via-primary/30 to-transparent my-8" />
+
           <AnimatePresence>
             {step >= 2 && (
               <motion.div
                 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, ease: EASE }}
-                className="p-8 flex flex-col items-center text-center gap-4"
+                className="p-7 flex-1 flex flex-col items-center text-center gap-3 min-w-[220px]"
                 style={{ background: 'rgba(0,135,248,0.05)' }}
               >
                 <span className="font-mono text-[10px] tracking-widest uppercase text-primary">What's needed</span>
@@ -63,7 +66,7 @@ export default function StillManualSlide({ step }: SlideProps) {
                   style={{ fontSize: 'clamp(14px, 1.5vw, 18px)' }}>
                   Integrated, AI-assisted thinking
                 </p>
-                <div className="flex flex-col gap-1.5 w-full">
+                <div className="flex flex-col gap-1 w-full">
                   {['Conversational design', 'Living diagrams', 'Trade-off analysis', 'Always up to date'].map(t => (
                     <div key={t} className="font-sans text-[#f9fdfe] font-light text-[12px] py-1 border-b border-white/[0.04] last:border-0">{t}</div>
                   ))}
@@ -73,6 +76,7 @@ export default function StillManualSlide({ step }: SlideProps) {
             )}
           </AnimatePresence>
         </div>
+        {/* End presenter's note */}
       </div>
     </SlideWrapper>
   )

@@ -26,27 +26,49 @@ import FutureSlide from './slides/15-FutureSlide'
 import CareerEvolutionSlide from './slides/16-CareerEvolutionSlide'
 import SeniorSkillsSlide from './slides/17-SeniorSkillsSlide'
 import WorkshopExerciseSlide from './slides/19-WorkshopExerciseSlide'
+import RealLifeSlide from './slides/20-RealLifeSlide'
+import ChaosSlide from './slides/21-ChaosSlide'
+import ThinkingFirstSlide from './slides/22-ThinkingFirstSlide'
+import MentalModelSlide from './slides/23-MentalModelSlide'
+import MiniExampleSlide from './slides/24-MiniExampleSlide'
+import DesignTogetherSlide from './slides/25-DesignTogetherSlide'
+import TakeawaysSlide from './slides/26-TakeawaysSlide'
 
 const slides = [
+  // Part 1 — Hook & Problem
   TitleSlide,
   AgendaSlide,
   SpeedParadoxSlide,
   VibeCodingSlide,
   WhatBreaksSlide,
+  // Part 2 — Deep Pain
+  RealLifeSlide,
+  ChaosSlide,
+  // Part 3 — Core Framework
   CoreTruthSlide,
   FivePillarsSlide,
+  ThinkingFirstSlide,
+  MentalModelSlide,
   ArchPatternsSlide,
   AIBlindSpotSlide,
   StillManualSlide,
-  DemoSlide,
   IdeaToInfraSlide,
   ADRSlide,
   PromptingSlide,
+  // Part 4 — Mini Example
+  MiniExampleSlide,
+  // Part 5 — Interactive Thinking
+  DesignTogetherSlide,
+  WorkshopExerciseSlide,
+  // Part 6 — Demo
+  DemoSlide,
+  // Part 7 — Avylo AI
+  AvyloSlide,
+  // Part 8 — Takeaways + Future + Closing
+  TakeawaysSlide,
   FutureSlide,
   CareerEvolutionSlide,
   SeniorSkillsSlide,
-  AvyloSlide,
-  WorkshopExerciseSlide,
   ClosingSlide,
 ]
 

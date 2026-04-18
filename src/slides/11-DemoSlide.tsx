@@ -296,6 +296,7 @@ export default function DemoSlide(_: SlideProps) {
   const [visibleNodeIds, setVisibleNodeIds] = useState<string[]>([])
   const [isLive, setIsLive] = useState(false)
   const timersRef = useRef<ReturnType<typeof setTimeout>[]>([])
+    // Demo Rule: Don’t rush transitions. Let nodes appear. Let silence work.
   const { text: typedName, done: nameDone } = useTypewriter(PROJECT_NAME, typingName, 42)
   const { text: typedDesc } = useTypewriter(PROJECT_DESC, typingDesc, 22)
 

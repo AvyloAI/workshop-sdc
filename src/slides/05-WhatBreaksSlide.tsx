@@ -53,7 +53,7 @@ export default function WhatBreaksSlide({ step }: SlideProps) {
         <div className="flex flex-col gap-2.5 w-full">
           {breaks.map((item, i) => (
             <AnimatePresence key={item.num}>
-              {step > i && (
+              {step >= i && (
                 <motion.div
                   initial={{ opacity: 0, x: -28 }}
                   animate={{ opacity: 1, x: 0 }}

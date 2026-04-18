@@ -37,7 +37,7 @@ export default function PromptingSlide({ step }: SlideProps) {
         <div className="flex flex-col gap-4">
           {prompts.map((p, i) => (
             <AnimatePresence key={i}>
-              {step > i && (
+              {step >= i && (
                 <motion.div
                   initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -57,13 +57,23 @@ export default function PromptingSlide({ step }: SlideProps) {
 
         <AnimatePresence>
           {step >= 3 && (
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="mt-6 font-mono text-[13px] tracking-widest uppercase text-primary/60 text-center"
-            >
-              Constraints + Context + Consequences = better AI output
-            </motion.p>
+            <>
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="mt-6 font-mono text-[13px] tracking-widest uppercase text-primary/60 text-center"
+              >
+                Constraints + Context + Consequences = better AI output
+              </motion.p>
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="mt-2 font-sans italic text-[#94a3b8] text-center"
+                style={{ fontSize: 'clamp(13px, 1.2vw, 16px)' }}
+              >
+                AI is only as good as the thinking you give it.
+              </motion.p>
+            </>
           )}
         </AnimatePresence>
       </div>

@@ -58,7 +58,7 @@ export default function IdeaToInfraSlide({ step }: SlideProps) {
         <div className="w-full flex items-stretch gap-2">
           {steps.map((s, i) => (
             <AnimatePresence key={s.num}>
-              {step > i && (
+              {step >= i && (
                 <motion.div
                   initial={{ opacity: 0, scale: 0.9, y: 16 }}
                   animate={{ opacity: 1, scale: 1, y: 0 }}

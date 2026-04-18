@@ -60,7 +60,7 @@ export default function ArchPatternsSlide({ step }: SlideProps) {
         <div className="grid grid-cols-3 gap-4 w-full">
           {resolvedPatterns.map((p, i) => (
             <AnimatePresence key={p.label}>
-              {step > i && (
+              {step >= i && (
                 <motion.div
                   initial={{ opacity: 0, y: 28, scale: 0.95 }}
                   animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -117,6 +117,12 @@ export default function ArchPatternsSlide({ step }: SlideProps) {
             </AnimatePresence>
           ))}
         </div>
+        <motion.p
+          variants={fadeUp}
+          className="font-mono text-[13px] tracking-widest uppercase text-primary/70 text-center mt-8"
+        >
+          Every step solved something… and created something worse.
+        </motion.p>
       </div>
     </SlideWrapper>
   )
